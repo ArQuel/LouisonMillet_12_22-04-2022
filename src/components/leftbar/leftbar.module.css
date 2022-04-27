@@ -1,0 +1,14 @@
+.leftbar {
+    display: flex;
+    flex-direction: column;
+    background-color: #020203;
+    width: 100px;
+    height: 718.95px;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.logos {
+    width: 50%;
+    cursor: pointer;
+}

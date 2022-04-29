@@ -12,3 +12,10 @@
     width: 50%;
     cursor: pointer;
 }
+
+.copyright {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    padding-right: 0px;
+    font-size: 12px;
+}

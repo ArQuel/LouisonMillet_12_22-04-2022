@@ -1,20 +1,10 @@
-import React from "react";
+async function ApiServices (id, action = '') {
+    
+const promise = await fetch(`http://localhost:3000/user/${id}/${action}`)
 
-function Fetch () {
+const datas = await promise.json()
 
-fetch('http://localhost:3000/user/12/performance')
-.then(response => response.json())
-.then(data => {
-    console.log("hey voici les datas", data)
-})
-.catch(function() {
-    console.log('Error happened')
-});
-
-return (
-    <div>test</div>
-
-)
+return datas
 }
 
-export default Fetch
+export default ApiServices

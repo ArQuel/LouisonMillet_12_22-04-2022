@@ -1,23 +1,27 @@
 import React from "react"
 import styles from './dashboard.module.css'
-// import { ReactPropTypes } from "react"
+import PropTypes from "prop-types"
+import Graphiques from "../graphiques/graphiques"
 
-function Dashboard () {
-    // Dashboard.ReactPropTypes = {    
-    //     name : 'Utilisateur'
-    // }    
+function Dashboard (props) {
+
     
-    // Changer le className et le Utilisateur lorsque API sera fait
 return (
-    <>
     <div className={styles.dashboard}>
+    <div>
         <span className={styles.user}>Bonjour</span>
-        <span className={styles.user}>{props.name}</span>
+        <span className={`${styles.user} ${styles.name}`}>{props.name}</span>
+        <p className={styles.congratulations}>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
     </div>
-    </>
+        <Graphiques></Graphiques>
+    </div>
 
 )
 }
+
+    Dashboard.propTypes = {    
+        name : PropTypes.string
+    }    
 
 
 

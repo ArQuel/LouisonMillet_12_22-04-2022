@@ -1,0 +1,28 @@
+.resume {
+    position: absolute;
+    right: 5%;
+    top: 18%;
+    display: flex;
+    flex-direction: column;
+}
+
+.inside {
+    display: flex;
+    width: 200px;
+    align-items: center;
+    background-color: #FBFBFB;
+    border-radius: 5px;
+    padding: 15px;
+    margin-top: 15px;
+}
+
+.resumeImg {
+    width: 60px;
+    height: 60px;
+}
+
+.resumeDesc {
+    display: flex;
+    flex-direction: column;
+    padding-left: 15px;
+}

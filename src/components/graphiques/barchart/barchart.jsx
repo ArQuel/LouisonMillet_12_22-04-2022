@@ -84,24 +84,27 @@ import { useState } from 'react';
 
 
 function BarCharts() {
-    const monthTickFormatter = (tick) => {
-        const date = new Date(tick);
+    // const monthTickFormatter = (tick) => {
+    //     const date = new Date(tick);
       
-        return date.getMonth() + 1;
-      };
+    //     return date.getMonth() + 1;
+    //   };
 
       const [datas, setDatas] = useState(undefined)
 
   useEffect(() => {
     ApiServices(12, 'activity').then(datas => {
       const sessions = datas.data.sessions
-      console.log(sessions)
       setDatas(sessions)
     })
   }, [])
-      
+
+    console.log(datas)
+      // tickFormatter={monthTickFormatter}
+
+
     return (
-      <ResponsiveContainer width="50%" height="40%">
+      <ResponsiveContainer width="65%" height="40%">
        <BarChart
            width={500}
            height={300}
@@ -114,20 +117,20 @@ function BarCharts() {
         }}
        >
        <CartesianGrid vertical={false} strokeDasharray="1 1" />
-       <XAxis dataKey="day" tickFormatter={monthTickFormatter} />
+       <XAxis dataKey="day"/>
        <XAxis
-         dataKey="date"
+         dataKey="day"
          axisLine={false}
          tickLine={false}
          interval={0}
          height={1}
          scale="band"
        />
-       <YAxis />
+       <YAxis dataKey='kilogram'/>
        <Tooltip />
        <Legend />
-       <Bar dataKey="pv" fill="#282D30" radius={[50, 50, 0, 0]}/>
-       <Bar dataKey="uv" fill="#E60000" radius={[50, 50, 0, 0]}/>
+       <Bar dataKey="kilogram" fill="#282D30" radius={[50, 50, 0, 0]}/>
+       <Bar dataKey="calories" fill="#E60000" radius={[50, 50, 0, 0]}/>
        </BarChart>
       </ResponsiveContainer>
     )

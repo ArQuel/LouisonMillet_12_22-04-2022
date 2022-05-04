@@ -12,7 +12,6 @@ function App() {
 
   useEffect(() => {
     ApiServices(12).then(datas => {
-      console.log(datas)
       setUser(datas.data.userInfos)
     })
   }, [])

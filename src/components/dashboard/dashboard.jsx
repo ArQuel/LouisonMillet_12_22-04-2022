@@ -8,13 +8,12 @@ import BarCharts from '../graphs/barchart/barchart'
 import RadarGraph from "../graphs/radarGraph/radarGraph"
 
 function Dashboard (props) {
-    
     return (
         <div className={styles.dashboard}>
         <div>
             <span className={styles.user}>Bonjour</span>
             <span className={`${styles.user} ${styles.name}`}>{props.name}</span>
-            <p className={styles.congratulations}>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
+            <p className={styles.congratulations}>Félicitations ! Vous avez explosé vos objectifs hier 👏</p>
         </div>
             <BarCharts data={datas12}></BarCharts>
             <Resume data={datas12}></Resume>

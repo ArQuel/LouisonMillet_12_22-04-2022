@@ -61,7 +61,7 @@ function BarCharts(props) {
             }}>
           <CartesianGrid vertical={false} strokeDasharray="1 1"/>
           <XAxis dataKey="day" tickLine={false} axisLine={false} tickFormatter={tickFormatterX}/>
-          <YAxis dataKey='kilogram' axisLine={false} tickCount={4} orientation='right' domain={["dataMin - 1", "dataMax + 1"]}/>
+          <YAxis dataKey='kilogram' yAxisId="calories" axisLine={false} tickCount={4} orientation='right' domain={["dataMin - 1", "dataMax + 1"]}/>
           <Tooltip />
           <Legend wrapperStyle={{fontSize: "1.6rem", position: "relative", bottom: "19rem"}}
                   verticalAlign="top"
@@ -70,12 +70,14 @@ function BarCharts(props) {
                   iconSize="10"/>
 
           <Bar    barSize={8}
+                  yAxisId="kilogram"
                   name="Poids (kg)"
                   dataKey="kilogram" 
                   fill="#020203" 
                   radius={[50, 50, 0, 0]}/>
 
           <Bar    barSize={8}
+                  yAxisId="calories"
                   name="Calories brûlées (kCal)" 
                   dataKey="calories" 
                   fill="#E60000" 

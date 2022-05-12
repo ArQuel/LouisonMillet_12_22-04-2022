@@ -14,25 +14,38 @@ function BarCharts(props) {
 
       const [datas, setDatas] = useState(undefined)
 
-      const sessions = props.data[1].sessions
-
-      const tickFormatterX = () => {
-        for (let i = 0; i < sessions.length; i++){
-          const day = sessions[i].day.split('-0')
-          return parseInt(day[2])
-        } 
-      }
-      
       useEffect(() => {
         setDatas(sessions)
       }, [])
 
-      let tab = []
+
+      const sessions = props.data[1].sessions
+
+      const tickFormatterX = (tick) => {
+          const day = tick.split('-')
+        return day[2]
+      }
+
+      let tabPds = []
 
       for (let i = 0; i < sessions.length; i++){
-        tab.push(sessions[i].kilogram)
+        tabPds.push(parseInt(sessions[i].kilogram))
       } 
       
+      let tabCal =[]
+
+      for (let i = 0; i < sessions.length; i++){
+        tabCal.push(parseInt(sessions[i].calories))
+      }
+
+      // const factor = Math.max(...tabPds) / Math.max(...tabCal)
+
+      // const formatedData = datas?.map(data => {
+      //   data.adaptedCal = data.calories * factor
+      //   return data
+      // } )
+
+      // console.log(formatedData)
 
     return ( datas ?
       <ResponsiveContainer width="65%" height="40%">
@@ -48,20 +61,33 @@ function BarCharts(props) {
         }}
        >
        <CartesianGrid vertical={false} strokeDasharray="1 1"/>
-       <XAxis dataKey="day" tickFormatter={tickFormatterX}/>
+       <XAxis dataKey="day" tickLine={false} axisLine={false} tickFormatter={tickFormatterX}/>
        <XAxis
          dataKey="day"
          axisLine={false}
-         tickLine={false}
          interval={0}
          height={1}
          scale="band"
        />
-       <YAxis dataKey='kilogram' orientation='right' domain={[Math.min(tab), Math.max(tab)]}/>
+       <YAxis dataKey='kilogram' axisLine={false} tickCount={4} orientation='right' domain={["dataMin - 1", "dataMax + 1"]}/>
        <Tooltip />
-       <Legend />
-       <Bar barSize={8} dataKey="kilogram" fill="#282D30" radius={[50, 50, 0, 0]}/>
-       <Bar barSize={8} dataKey="calories" fill="#E60000" radius={[50, 50, 0, 0]}/>
+       <Legend  wrapperStyle={{fontSize: "1.6rem", position: "relative", bottom: "19rem"}}
+                verticalAlign="top"
+                align="right"
+                iconType="circle"
+                iconSize="10"/>
+                
+       <Bar     barSize={8}
+                name="Poids (kg)"
+                dataKey="kilogram" 
+                fill="#020203" 
+                radius={[50, 50, 0, 0]}/>
+
+       <Bar     barSize={8}
+                name="Calories brûlées (kCal)" 
+                dataKey="calories" 
+                fill="#E60000" 
+                radius={[50, 50, 0, 0]}/>
        </BarChart>
       </ResponsiveContainer>
     : null)

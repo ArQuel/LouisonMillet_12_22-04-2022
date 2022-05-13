@@ -1,3 +1,13 @@
 .ctn {
-    height: 800px;
+    margin-top: 50px;
+    height: 200px;
+}
+
+.title {
+    margin-left: 15px;
+    font-size: 16px;
+}
+
+span {
+    font-size: 13px;
 }

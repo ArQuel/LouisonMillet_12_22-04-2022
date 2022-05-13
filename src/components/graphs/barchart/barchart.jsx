@@ -5,12 +5,8 @@ import PropTypes from "prop-types"
 import styles from './barcharts.module.css'
 
 function BarCharts(props) {
-    // const monthTickFormatter = (tick) => {
-    //     const date = new Date(tick);
-      
-    //     return date.getMonth() + 1;
-    //   };
-          // tickFormatter={monthTickFormatter}
+
+      const sessions = props.data[1].sessions
 
       const [datas, setDatas] = useState(undefined)
 
@@ -18,65 +14,48 @@ function BarCharts(props) {
         setDatas(sessions)
       }, [])
 
-
-      const sessions = props.data[1].sessions
-
-      const tickFormatterX = (tick) => {
+      const tickFormatter = (tick) => {
           const day = tick.split('-')
         return day[2]
       }
 
-      let tabPds = []
-
-      for (let i = 0; i < sessions.length; i++){
-        tabPds.push(parseInt(sessions[i].kilogram))
-      } 
-      
-      let tabCal =[]
-
-      for (let i = 0; i < sessions.length; i++){
-        tabCal.push(parseInt(sessions[i].calories))
-      }
-
-      // const factor = Math.max(...tabPds) / Math.max(...tabCal)
-
-      // const formatedData = datas?.map(data => {
-      //   data.adaptedCal = data.calories * factor
-      //   return data
-      // } )
-
-      // console.log(formatedData)
 
     return ( datas ?
       <div className={styles.ctn}>
-        <h2>Activités quotidiennes</h2>
+        <h2 className={styles.title}>Activités quotidiennes</h2>
         <ResponsiveContainer width="65%" height="100%">
           <BarChart
                data={datas}
                margin={{
-                   top: 5,
-                   right: 30,
-                   left: 20,
-                   bottom: 5,
-            }}>
+                   top: 0,
+                   right: 0,
+                   left: 0,
+                   bottom: 0,
+               }}
+          >
           <CartesianGrid vertical={false} strokeDasharray="1 1"/>
-          <XAxis dataKey="day" tickLine={false} axisLine={false} tickFormatter={tickFormatterX}/>
-          <YAxis dataKey='kilogram' yAxisId="calories" axisLine={false} tickCount={4} orientation='right' domain={["dataMin - 1", "dataMax + 1"]}/>
+          <XAxis dataKey="day" tickLine={false} axisLine={false} tickFormatter={tickFormatter}/>
+          <YAxis dataKey='kilogram' yAxisId="kilogram" axisLine={false} tickCount={4} orientation='right' domain={["dataMin - 1", "dataMax + 1"]}/>
+          <YAxis
+                  yAxisId="calories"
+                  orientation="right"
+                  tickLine={false}
+                  dataKey="calories"
+                  hide={true}/>
           <Tooltip />
-          <Legend wrapperStyle={{fontSize: "1.6rem", position: "relative", bottom: "19rem"}}
-                  verticalAlign="top"
+          <Legend wrapperStyle={{fontSize: "1rem", bottom: "13.5rem"}}
                   align="right"
                   iconType="circle"
-                  iconSize="10"/>
+                  iconSize="5"/>
 
-          <Bar    barSize={8}
-                  yAxisId="kilogram"
+          <Bar    barSize={7}
                   name="Poids (kg)"
+                  yAxisId="kilogram"
                   dataKey="kilogram" 
                   fill="#020203" 
                   radius={[50, 50, 0, 0]}/>
-
-          <Bar    barSize={8}
+        
+          <Bar    barSize={7}
                   yAxisId="calories"
                   name="Calories brûlées (kCal)" 
                   dataKey="calories" 

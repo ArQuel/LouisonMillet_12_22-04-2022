@@ -59,13 +59,16 @@ function RadarGraph () {
   //   }
 
     return (
-      <ResponsiveContainer className={styles} width="20%" height={150}>
-        <RadarChart cx="50%" cy="50%" outerRadius="80%" data={data}>
-          <PolarGrid />
-          <PolarAngleAxis dataKey="subject" />
-          <Radar dataKey="A" fill="#FF0101B2" fillOpacity={1} />
-        </RadarChart>
-      </ResponsiveContainer>
+      <div className={styles.radarCtn}>
+        <ResponsiveContainer className={styles} width="20%" height={150}>
+          <RadarChart cx="50%" cy="50%" outerRadius="80%" data={data}>
+            <PolarGrid />
+            <PolarAngleAxis dataKey="subject" />
+            <Radar dataKey="A" fill="#FF0101B2" fillOpacity={1} />
+          </RadarChart>
+        </ResponsiveContainer>
+      </div>
+
     );
   }
 

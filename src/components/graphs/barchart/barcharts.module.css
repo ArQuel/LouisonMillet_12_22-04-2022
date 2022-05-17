@@ -1,6 +1,7 @@
 .ctn {
     margin-top: 50px;
     height: 200px;
+    width: 625px;
 }
 
 .title {
@@ -8,6 +9,19 @@
     font-size: 16px;
 }
 
-span {
-    font-size: 13px;
+.recharts-legend-item-1 { 
+    font-size: 5rem; 
 }
+
+.tooltip_container {
+    background-color: red;
+    height: 4rem;
+    font-size: 11px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 5px
+  }
+
+  

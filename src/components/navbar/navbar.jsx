@@ -8,16 +8,16 @@ return (
     <nav className={styles.navbar}>
             <img src={logo} className={styles.image}></img>
         <div>
-            <span>Accueil</span>
+            <span className={styles.spanNav}>Accueil</span>
         </div>
         <div>
-            <span>Profil</span>
+            <span className={styles.spanNav}>Profil</span>
         </div>
         <div>
-            <span>Réglages</span>
+            <span className={styles.spanNav}>Réglages</span>
         </div>
         <div>
-            <span>Communauté</span>
+            <span className={styles.spanNav}>Communauté</span>
         </div>
     </nav>
     </>

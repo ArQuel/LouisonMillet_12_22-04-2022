@@ -24,6 +24,7 @@
 
 
 .radar {
-    background-color: #000000c0;
+    display: flex;
+    justify-content: space-around;
 }
 

@@ -8,11 +8,10 @@ const CustomTooltip = ({ active, payload }) => {
   if (!active || !payload) return null
       return (
           <div className={styles.tooltip_container}>
-              <p>{payload[0].value}kg</p>
-              <p>{payload[1].value}Kcal</p>
+              <p>{payload[0].value} kg</p>
+              <p>{payload[1].value} Kcal</p>
           </div>
       );
-
 };
 
 const tickFormatter = (tick) => {
@@ -23,7 +22,6 @@ return day[2]
 function BarCharts(props) {
 
       const sessions = props.data[1].sessions
-
       const [datas, setDatas] = useState(undefined)
 
       useEffect(() => {
@@ -93,7 +91,7 @@ BarCharts.propTypes = {
 } 
 
 CustomTooltip.propTypes = {
-  payload: PropTypes.array.isRequired,
+  payload: PropTypes.array,
   active: PropTypes.any
 }
 

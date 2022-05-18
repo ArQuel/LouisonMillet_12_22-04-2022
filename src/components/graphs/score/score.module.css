@@ -1,3 +1,12 @@
 .scoreCtn {
-    width: 100%;
+    width: 25%;
+    height: 210px;
+    position: relative;
+}
+
+.titreScore {
+    font-size: 16px;
+    position: absolute;
+    top: 0;
+    left: 0
 }

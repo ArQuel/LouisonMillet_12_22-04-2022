@@ -27,7 +27,7 @@
 ### Set up:
 #### Back-end:
 
-- Open `P9-front-end-dashboard` directory:
+- Open `P9-front-end-dashboard` directory :
 
 - Then, install dependencies : `npm install`
 
@@ -35,7 +35,7 @@
 
 #### Front-end:
 
-- Open a second terminal, then open `PROJET12` folder:
+- Open a second terminal, then open `PROJET12` folder :
 
 - Then, install dependencies : `npm install`
 

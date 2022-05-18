@@ -7,6 +7,12 @@ import proteines from './proteines.png'
 import PropTypes from "prop-types"
 import { useState, useEffect } from 'react';
 
+/**
+ * @name Resume
+ * @description - This component render the count of calories, proteins, carbohydrates and lipids of the user
+ * @returns {JSX.Element}
+ */
+
 function Resume (props) {
 
     const [datas, setDatas] = useState(undefined)

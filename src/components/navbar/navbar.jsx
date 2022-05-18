@@ -2,6 +2,12 @@ import React from "react"
 import logo from './Vector.png'
 import styles from './navbar.module.css'
 
+/**
+ * @name Navbar
+ * @description - This component render the main navbar component
+ * @returns {JSX.Element}
+ */
+
 function Navbar () {
 return (
     <>

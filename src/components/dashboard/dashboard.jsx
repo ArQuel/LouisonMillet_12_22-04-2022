@@ -5,13 +5,19 @@ import Resume from '../resume/resume'
 import BarCharts from '../graphs/barchart/barchart'
 import RadarGraph from "../graphs/radarGraph/radarGraph"
 import Score from '../graphs/score/score'
+import Average from "../graphs/average/average"
+
+
+/**
+ * @name Dashboard
+ * @description - This component will main page including all the child components.
+ * @returns {JSX.Element}
+ */
 function Dashboard (props) {
     const [user, setUser] = useState(undefined)
 
   useEffect(() => {
-    // ApiServices(12).then(datas => {
       setUser(props.user)
-    // })
   }, [])
     return ( user ? 
         <div className={styles.dashboard}>
@@ -23,6 +29,7 @@ function Dashboard (props) {
             <BarCharts data={user}></BarCharts>
             <Resume data={user}></Resume>
                 <div className={styles.graphs}>
+                    <Average data={user}></Average>
                     <RadarGraph data={user}></RadarGraph>
                     <Score data={user}></Score>
                 </div>

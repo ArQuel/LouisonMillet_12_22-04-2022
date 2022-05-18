@@ -4,10 +4,14 @@ import logoOne from './logoOne.PNG'
 import logoTwo from './logoTwo.PNG'
 import logoThree from './logoThree.PNG'
 import logoFour from './logoFour.PNG'
-// import PropTypes from "prop-types"
+
+/**
+ * @name Leftbar
+ * @description - This component render the left navbar component
+ * @returns {JSX.Element}
+ */
+
 function Leftbar () {
-
-
 return (
     <>
     <nav className={styles.leftbar}>
@@ -23,12 +27,5 @@ return (
 }
 
 
-// Leftbar.PropTypes = {    
-//     name : PropTypes.string
-// }    
-
-// Leftbar.defaultProps = {
-//     name : 'composant'
-// }
 
 export default Leftbar

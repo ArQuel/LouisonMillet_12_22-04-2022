@@ -3,6 +3,13 @@ import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } fro
 import { useState, useEffect } from 'react';
 import PropTypes from "prop-types"
 import styles from './radarGraph.module.css'
+
+/**
+ * @name RadarGraph
+ * @description - This component render the radar graph component
+ * @returns {JSX.Element}
+ */
+
 function RadarGraph (props) {
 
   const [datas, setDatas] = useState(undefined)
@@ -22,8 +29,8 @@ function RadarGraph (props) {
 
     return ( datas ?
       <div className={styles.radarCtn}>
-        <ResponsiveContainer className={styles} width="100%" height="100%">
-          <RadarChart cx="50%" cy="50%" outerRadius="55%" data={datas}>
+        <ResponsiveContainer className={styles} width="98%" height="100%">
+          <RadarChart cx="50%" cy="50%" outerRadius="50%" data={datas}>
             <PolarGrid radialLines={false}/>
             <PolarAngleAxis dataKey="kind" tickSize={8}
                     tick={{

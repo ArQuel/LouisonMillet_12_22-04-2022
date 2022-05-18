@@ -9,6 +9,7 @@ import styles from './average.module.css'
  * @returns {JSX.Element}
  */
 
+// Create custom tooltip
 const CustomTooltip = ({ active, payload }) => {
     if (!active || !payload) return null
         return (

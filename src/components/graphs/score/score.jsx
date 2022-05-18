@@ -11,6 +11,7 @@ import PropTypes from "prop-types"
 
 function Score (props) {
   const score = props.data[0].todayScore
+  // Formate datas
   const currentScore = score *100
   const valueScore = [{
     value: currentScore

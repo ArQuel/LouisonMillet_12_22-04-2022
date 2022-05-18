@@ -9,6 +9,7 @@ import styles from './barcharts.module.css'
  * @returns {JSX.Element}
  */
 
+// Create a custom tooltip
 const CustomTooltip = ({ active, payload }) => {
   if (!active || !payload) return null
       return (
@@ -19,6 +20,7 @@ const CustomTooltip = ({ active, payload }) => {
       );
 };
 
+// Formate ticks for XAxis
 const tickFormatter = (tick) => {
   const day = tick.split('-')
 return day[2]

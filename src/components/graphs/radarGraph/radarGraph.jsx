@@ -16,9 +16,8 @@ function RadarGraph (props) {
 
   useEffect(() => {
     const performances = props.data[3].data.map((performance, index) => {
-      // Formater les données
+      // Formate datas
       const kindName = ["cardio", "energie", "endurance", "force", "vitesse", "intensité"]
-
       return {
           kind: kindName[index],
           value: performance.value

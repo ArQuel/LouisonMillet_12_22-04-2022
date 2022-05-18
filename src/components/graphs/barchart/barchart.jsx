@@ -3,6 +3,11 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Responsive
 import PropTypes from "prop-types"
 import styles from './barcharts.module.css'
 
+/**
+ * @name BarCharts
+ * @description - This component render the barcharts graph component
+ * @returns {JSX.Element}
+ */
 
 const CustomTooltip = ({ active, payload }) => {
   if (!active || !payload) return null

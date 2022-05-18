@@ -1,3 +1,9 @@
+/**
+ * @name data12
+ * @description - This file is a mock of the user12'datas
+ * @returns {JS Element}
+ */
+
 const USER_MAIN_DATA = [
     {
         id: 12,

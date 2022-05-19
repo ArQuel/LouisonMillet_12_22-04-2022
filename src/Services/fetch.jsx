@@ -1,6 +1,6 @@
 /**
  * @name ApiServices
- * @description - This function call API to get users datas
+ * @description - This function call API to get users datas, and send them in one json file combinate them all
  * @returns {JSX. Element}
  */
 

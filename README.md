@@ -44,3 +44,5 @@
 - Terminal will told you that something is already running on port 3000 (Back end part),
 and will ask to you if you want to run the app on another port. Just press `Y`, and it will run on port 3001.
 
+- Default home page is `http://localhost:3001/user/12`, you can change the ID in URL to switch user
+

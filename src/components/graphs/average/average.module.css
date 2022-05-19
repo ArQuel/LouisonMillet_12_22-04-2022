@@ -11,6 +11,8 @@
     font-size: 14px;
     top: 10px;
     left: 10px;
+    color: white;
+    font-weight: 200;
 }
 
 .averageTooltip {
@@ -20,5 +22,7 @@
 .insideTooltip {
     padding: 5px;
 }
+
+
 
 

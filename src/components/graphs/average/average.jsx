@@ -18,6 +18,21 @@ const CustomTooltip = ({ active, payload }) => {
             </div>
         );
   };
+
+//   const CustomCursor = (props) => {
+//     const { points, width, height} = props;
+//     const { x, y } = points[0];
+//     return (
+//       <Rectangle
+//         fill="red"
+//         stroke="red"
+//         x={x}
+//         y={y}
+//         width={width}
+//         height={height}
+//       />
+//     );
+//   };
 function Average (props) {
 
     const sessions = props.data[2].sessions
@@ -45,6 +60,7 @@ function Average (props) {
                     <Tooltip
                         content={<CustomTooltip />}
                         cursor={{
+                            
                             stroke: 'rgba(0, 0, 0, 0.1)',
                             strokeWidth: 80,
                         }}
@@ -82,6 +98,13 @@ CustomTooltip.propTypes = {
   payload: PropTypes.array,
   active: PropTypes.any
 }
+
+// CustomCursor.propTypes = {
+//     points: PropTypes.any,
+//     width: PropTypes.any,
+//     height: PropTypes.any,
+//     stroke: PropTypes.any
+// }
 
 export default Average
 

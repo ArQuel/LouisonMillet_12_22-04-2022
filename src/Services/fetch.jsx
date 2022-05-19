@@ -5,13 +5,18 @@
  */
 
 
-async function ApiServices (id, action = '') {
+async function ApiServices (id) {
     
-const promise = await fetch(`http://localhost:3000/user/${id}/${action}`)
+const promiseUserInfos = await fetch(`http://localhost:3000/user/${id}`)
+const promiseActivity = await fetch(`http://localhost:3000/user/${id}/activity`)
+const promiseAverage = await fetch(`http://localhost:3000/user/${id}/average-sessions`)
+const promisePerformance = await fetch(`http://localhost:3000/user/${id}/performance`)
 
-const datas = await promise.json()
+const datas = await Promise.all([promiseUserInfos.json(), promiseActivity.json(), promiseAverage.json(), promisePerformance.json()])
 
-return datas
+const formatedDatas = datas.map(elt => elt.data)
+
+return formatedDatas
 }
 
 export default ApiServices

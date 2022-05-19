@@ -10,6 +10,8 @@
  
 - Possibility to switch between mock file from Back end and call API
 
+- Screen size : 1024 * 780 
+
 ### Elements provided:
 
  - Tools and technical constraints

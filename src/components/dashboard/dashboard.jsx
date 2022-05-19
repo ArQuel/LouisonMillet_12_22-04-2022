@@ -60,7 +60,9 @@ function Dashboard () {
                     <RadarGraph data={user}></RadarGraph>
                     <Score data={user}></Score>
                 </div>
-        </div> : <h1>Chargement...</h1>
+        </div> : <div className={styles.loadingCtn}>
+                   <h1 className={styles.loading}>Chargement...</h1>
+                 </div>
     )
 }
 

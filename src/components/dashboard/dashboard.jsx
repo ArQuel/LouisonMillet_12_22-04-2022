@@ -18,7 +18,7 @@ import Error404 from "../Error404/Error404"
 
 /**
  * @name Dashboard
- * @description - This component will main page including all the child components.
+ * @description - This component will render main page including all the child components.
  * @returns {JSX.Element}
  */
 
